@@ -3,8 +3,8 @@
 Members
 =======
 - #[~] : Christopher Hunt
-- #[!] : Sarah ?
-- #[@] : ? ?
+- #[!] : Sarah Mortensen
+- #[@] : Phoenix Angulo
 
 
 This is the repository for CS 162 Assignment 3 Group Coding Project.
