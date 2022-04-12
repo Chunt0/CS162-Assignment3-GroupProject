@@ -56,3 +56,5 @@ while True:
         erase.goto(path[0])
         path.pop(0)
         print(path)
+#add code here
+
