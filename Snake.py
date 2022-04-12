@@ -1,10 +1,13 @@
 import turtle
 import utils
 
+#[~] These could be packaged as class in a seperate file.
+#[~]------------------------------
 #Screen
 map = turtle.Screen()
 map.bgcolor("lightblue")
 
+#[~]------------------------------
 #Turtle Player
 snake = turtle.Turtle()
 snake.color("green")
@@ -15,6 +18,7 @@ erase = turtle.Turtle()
 erase.color("lightblue")
 erase.hideturtle()
 
+#[~]------------------------------
 
 #Constant
 speed = 1
@@ -49,7 +53,9 @@ map.onkey(right, 'd')
 snake.pendown()
 path.append(snake.position())
 erase.pendown()
-while True:
+
+
+while True: #[~] Maybe a problem here? Infinite loops can be iffy.
     snake.forward(speed)
     path.append(snake.position()) #trying to get position for erase turtle to follow
     if len(path) > length:
