@@ -2,9 +2,9 @@
 
 Members
 =======
-- #[~] Christopher Hunt
-- #[!] Sarah ?
-- #[@] ? ?
+- #[~] : Christopher Hunt
+- #[!] : Sarah ?
+- #[@] : ? ?
 
 
 This is the repository for CS 162 Assignment 3 Group Coding Project.
