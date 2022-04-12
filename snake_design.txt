@@ -1,0 +1,27 @@
+Needed Class definitions:
+
+Class Snake:
+    attributes:
+    main_turtle
+    size
+    speed
+
+    methods:
+    addSnake
+    moveSnake
+
+
+Class Scoreboard:
+    attributes:
+
+    methods:
+    addScore
+    winConditionCheck
+
+Class Screen:
+    attributes:
+    x_boundary
+    y_boundary
+
+    methods:
+    buildScreen
