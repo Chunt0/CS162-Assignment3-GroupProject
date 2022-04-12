@@ -1,4 +1,5 @@
 Needed Class definitions:
+(These are just some starting ideas)
 
 Class Snake:
     attributes:
