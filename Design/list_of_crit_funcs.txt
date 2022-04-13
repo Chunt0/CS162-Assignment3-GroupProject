@@ -1,0 +1,41 @@
+from turtle:
+
+turtle.Turtle()
+    .shape()
+    .color()
+    .penup()
+    .pendown()
+    .goto()
+    .direction -> lvalue :: make it equal to string
+    .speed()
+    .hideturtle()
+    .write()
+    .clear()
+    .xcor()
+    .ycor()
+    .setx()
+    .sety()
+    .distance() -> arg :: turtle.distance(other_turtle)
+
+
+turtle.Screen()
+    .title()
+    .bgcolor()
+    .setup()
+    .tracer()
+    .listen()
+    .onkeypress()
+    .update()
+
+----------------------------------------------------
+
+from time:
+
+time.sleep()
+
+----------------------------------------------------
+
+from random:
+
+random.randint()
+random.choice()
