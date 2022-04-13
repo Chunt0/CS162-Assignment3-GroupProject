@@ -1,11 +1,20 @@
 Needed Class definitions:
 (These are just some starting ideas)
 
+snake = turtle.Turtle()
+snake.shape("square")
+
 Class Snake:
+
+
     attributes:
     main_turtle
-    size
-    speed
+    size -> set size: .pensize()
+    speed -> set speed: .speed()
+    shape -> set shape: .shape()
+    pencolor -> set color: .pencolor()
+    fillcolor -> set fill color: .fillcolor()
+        snake.pen(pencolor="black", fillcolor="black", pensize=n, speed=m, shape="square")
 
     methods:
     addSnake
