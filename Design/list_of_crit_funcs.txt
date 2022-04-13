@@ -15,14 +15,15 @@ turtle.Turtle()
         .clear()
     
     movement:
-        .goto()
-        .direction -> lvalue :: make it equal to string
-        .pos() ->
-        .speed()
-        .xcor()
-        .ycor()
-        .setx()
-        .sety()
+        .goto() -> takes a tuple: (x,y)
+        .direction = ("up", "down", "left", "right")
+        .forward(), .backward(), .right(), .left() -> Likely we'll only use .forward()
+            -> Takes an int as argument for how many pixels to move in that direction. 
+        .pos() -> returns the a tuple of the x,y coordinates as float.
+        .speed() -> Will be setting speed to 0. Movement will be controlled by stepping using
+        .xcor() -> returns the turtles current x-coordinate
+        .ycor() -> returns the turtles current y-coordinate
+        .setx(), .sety() -> sets x,y coordinates. 
         .distance() -> arg :: turtle.distance(other_turtle)
 
 turtle.Screen()
@@ -30,8 +31,8 @@ turtle.Screen()
     .bgcolor()
     .setup()
     .tracer()
-    .listen()
-    .onkeypress()
+    .listen() -> use this before .onkeypress()
+    .onkeypress() -> args: (someFunction, "<keytobind>") | When key is pressed do function.
     .update()
 
 ----------------------------------------------------

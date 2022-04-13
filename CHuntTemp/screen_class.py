@@ -10,10 +10,12 @@ snake_head.shape("square")
 snake_head.color("yellow")
 """
 
+head = turtle.Turtle()
+head.shape("square")
+head.color("orange")
 
-class Screen():
-    def __init__(self):
 
-        self.screen=turtle.Screen()
+screen=turtle.Screen()
+screen.bgcolor("purple")
 
-screen = Screen()
+screen.exitonclick()
