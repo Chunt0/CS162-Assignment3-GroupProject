@@ -3,12 +3,13 @@ import turtle
 import time
 import random
 
+# these const variables can be left in the main file
 delay = 0.1
 score = 0
 high_score = 0
 
 
-
+# move this into a screen class
 # Creating a window screen
 wn = turtle.Screen()
 wn.title("Snake Game")
@@ -17,6 +18,8 @@ wn.bgcolor("blue")
 wn.setup(width=600, height=600)
 wn.tracer(0)
 
+
+#Move this into a snake class
 # head of the snake
 head = turtle.Turtle()
 head.shape("square")
@@ -25,6 +28,7 @@ head.penup()
 head.goto(0, 0)
 head.direction = "Stop"
 
+# move this into a food class
 # food in the game
 food = turtle.Turtle()
 colors = random.choice(['red', 'green', 'black'])
