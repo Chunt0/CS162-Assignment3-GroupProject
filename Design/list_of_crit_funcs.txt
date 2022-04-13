@@ -1,3 +1,4 @@
+#[~]
 from turtle:
 
 turtle.Turtle()
