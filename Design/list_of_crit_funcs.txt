@@ -1,22 +1,24 @@
 from turtle:
 
 turtle.Turtle()
-    .shape()
-    .color()
-    .penup()
-    .pendown()
-    .goto()
-    .direction -> lvalue :: make it equal to string
-    .speed()
-    .hideturtle()
-    .write()
-    .clear()
-    .xcor()
-    .ycor()
-    .setx()
-    .sety()
-    .distance() -> arg :: turtle.distance(other_turtle)
-
+    design:
+        .shape()
+        .color()
+        .penup()
+        .pendown()
+        .hideturtle()
+        .write()
+        .clear()
+    
+    movement:
+        .goto()
+        .direction -> lvalue :: make it equal to string
+        .speed()
+        .xcor()
+        .ycor()
+        .setx()
+        .sety()
+        .distance() -> arg :: turtle.distance(other_turtle)
 
 turtle.Screen()
     .title()
@@ -31,7 +33,7 @@ turtle.Screen()
 
 from time:
 
-time.sleep()
+time.sleep() 
 
 ----------------------------------------------------
 
