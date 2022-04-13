@@ -4,14 +4,16 @@
 # screen_class.py
 import turtle
 
-w = 600
-h = 800
-
-while True:
-    screen=turtle.Screen()
-    screen.title("Snake Charmers")
-    screen.bgcolor("purple")
-    screen.screensize(width = w, height = h)
+"""
+snake_head = turtle.Turtle()
+snake_head.shape("square")
+snake_head.color("yellow")
+"""
 
 
-#    screen.exitonclick()
+class Screen():
+    def __init__(self):
+
+        self.screen=turtle.Screen()
+
+screen = Screen()

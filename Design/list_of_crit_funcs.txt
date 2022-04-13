@@ -3,17 +3,21 @@ from turtle:
 
 turtle.Turtle()
     design:
-        .shape()
-        .color()
-        .penup()
-        .pendown()
-        .hideturtle()
-        .write()
+        .shape() -> sets the shape of the turtle.
+        .color() -> sets color of turtle
+        .penup() -> The turtle is up, so it doesn't mark on the screen 
+                 -> use this for the snake head and it's segements.
+        .pendown() -> The turtle is down, when it moves it leaves a mark. 
+                   -> Use to write text with an invisible turtle
+        .hideturtle() -> makes the turtle part invisible. 
+                      -> Use this when writing text
+        .write("text to write",align="",font=("",1,"")) -> I think this one allows you to write text on the screen.
         .clear()
     
     movement:
         .goto()
         .direction -> lvalue :: make it equal to string
+        .pos() ->
         .speed()
         .xcor()
         .ycor()
