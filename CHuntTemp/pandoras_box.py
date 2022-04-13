@@ -97,6 +97,7 @@ segments = []
 # Main Gameplay
 while True:
 	wn.update()
+# This section starts the game, moves the head to the center and generates a new
 	if head.xcor() > 290 or head.xcor() < -290 or head.ycor() > 290 or head.ycor() < -290:
 		time.sleep(1)
 		head.goto(0, 0)
@@ -116,6 +117,7 @@ while True:
 		y = random.randint(-270, 270)
 		food.goto(x, y)
 
+# This could be turned into a function and added to snake class?
 		# Adding segment
 		new_segment = turtle.Turtle()
 		new_segment.speed(0)
@@ -139,6 +141,7 @@ while True:
 		x = head.xcor()
 		y = head.ycor()
 		segments[0].goto(x, y)
+# Does move() make the snake move? yes, it increments the snake by 20 pixels in whatever direction it is facing.
 	move()
 	for segment in segments:
 		if segment.distance(head) < 20:
