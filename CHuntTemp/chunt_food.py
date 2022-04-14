@@ -5,7 +5,7 @@ import random
 class Food():
     def __init__(self):
         self.food = turtle.Turtle()
-        self.food.color = random.choice(["black", "red", "blue"])
+        self.food.color = "black"
         self.food.shape = "square"
         self.food.speed(0)
         self.food.penup()
