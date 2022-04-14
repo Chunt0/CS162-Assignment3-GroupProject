@@ -9,7 +9,6 @@ def createGameWindow():
     window.bgcolor("light blue")
     # the width and height can be put as user's choice
     window.setup(width=600, height=600)
-    window.tracer(0)
     return window
 
 window = createGameWindow()

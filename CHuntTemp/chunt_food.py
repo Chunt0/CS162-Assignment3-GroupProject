@@ -5,17 +5,17 @@ import random
 class Food():
     def __init__(self):
         self.food = turtle.Turtle()
-        self.color = random.choice(["black", "red", "blue"])
-        self.shape = "square"
+        self.food.color = random.choice(["black", "red", "blue"])
+        self.food.shape = "square"
+        self.food.speed(0)
         self.food.penup()
         self.food.goto((0,100))
-
 
 """
 Game mechanic to detect how close the snake is to the food.
 if it is then move the food to a new random location.
 
-def checkSnakeDistFromFood(snake):
+def checkSnakeDistFromFood(snake, food):
     if snake.distance(food) < 20:
     	x = random.randint(-270, 270) # these values can change, depends on how large our screen is to begin
     	y = random.randint(-270, 270) # same as above
