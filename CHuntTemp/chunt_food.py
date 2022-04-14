@@ -9,7 +9,7 @@ class Food():
         self.food.shape('square')
         self.food.speed(0)
         self.food.penup()
-        self.food.goto((0,100))
+        self.food.goto((0,200))
 
 """
 I think the food class really doesn't need any methods.

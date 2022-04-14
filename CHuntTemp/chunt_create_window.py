@@ -1,5 +1,6 @@
 import turtle
 from chunt_food import Food
+from chunt_scoreboard import ScoreBoard
 
 def createGameWindow():
     # move this into a screen class
@@ -8,10 +9,11 @@ def createGameWindow():
     window.title("Snake Game")
     window.bgcolor("light blue")
     # the width and height can be put as user's choice
-    window.setup(width=600, height=600)
+    window.setup(width=800, height=800)
     return window
 
 window = createGameWindow()
+score = ScoreBoard()
 food = Food()
 window.exitonclick()
 

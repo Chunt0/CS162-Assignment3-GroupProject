@@ -14,6 +14,7 @@ class Snake:
         self.head.shape('triangle')
         self.head.color(color)
         self.head.penup()
+        self.head.direction = "Stop"
         
     
         for idx in range(self.length):
