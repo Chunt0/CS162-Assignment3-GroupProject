@@ -2,11 +2,11 @@
 
 Members
 =======
-- Christopher Hunt
-- Sarah ?
-- ? ?
+- #[~] : Christopher Hunt
+- #[!] : Sarah Mortensen
+- #[@] : Phoenix Angulo
 
 
 This is the repository for CS 162 Assignment 3 Group Coding Project.
 
-We are tasked to build a snake-like video game.
+
