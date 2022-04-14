@@ -30,11 +30,16 @@ def checkSnakeDistFromFood(snake):
     	new_segment.color(snake.color) 
     	new_segment.penup()
     	snake.body.append(new_segment)
-    	delay -= 0.001
-    	score += 10
-    	if score > high_score:
+    	
+        delay -= 0.001
+    	score += 10 # Add score to the score board
+    	
+        
+        if score > high_score:
     		high_score = score
-    	pen.clear()
+    	
+        # This might use a "pen" created from the scoreboard class, and then use the .write function to update the score
+        pen.clear()
     	pen.write("Score : {} High Score : {} ".format(
     		score, high_score), align="center", font=("candara", 24, "bold"))
 
