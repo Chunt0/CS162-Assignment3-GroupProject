@@ -5,11 +5,11 @@ import random
 class Food():
     def __init__(self):
         self.food = turtle.Turtle()
-        self.food.color("black")
-        self.food.shape('square')
-        self.food.speed(0)
+        self.food.color("black") # Could be randomized
+        self.food.shape('square') # Could be randomized
+        self.food.speed(0) # This food ain't goin anywhere
         self.food.penup()
-        self.food.goto((0,200))
+        self.food.goto((0,200)) # Initial food location
 
 """
 I think the food class really doesn't need any methods.
