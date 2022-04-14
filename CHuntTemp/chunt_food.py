@@ -6,9 +6,9 @@ class Food():
     def __init__(self):
         self.food = turtle.Turtle()
         self.color = random.choice(["black", "red", "blue"])
-        self.shape = "turtle"
-        self.food.hideturtle()
+        self.shape = "square"
         self.food.penup()
+        self.food.goto((0,100))
 
 
 """

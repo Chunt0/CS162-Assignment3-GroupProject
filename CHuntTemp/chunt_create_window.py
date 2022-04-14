@@ -1,4 +1,5 @@
 import turtle
+from chunt_food import Food
 
 def createGameWindow():
     # move this into a screen class
@@ -12,6 +13,6 @@ def createGameWindow():
     return window
 
 window = createGameWindow()
-
+food = Food()
 window.exitonclick()
 
