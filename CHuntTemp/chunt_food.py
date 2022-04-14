@@ -12,6 +12,21 @@ class Food():
         self.food.goto((0,100))
 
 """
+I think the food class really doesn't need any methods.
+It pretty much should just sit still and do nothing.
+The only time anything should happen is dependent on the snake.
+If the snake gets within a certain distance, the food should
+randomly relocate itself and that is it.
+
+Score board will need to be updated, and snake length with need to be updated
+
+perhaps this mock up of a detection function could be added to the snake class?
+or it could be apart of the driver functions
+
+
+Take a look:
+============
+
 Game mechanic to detect how close the snake is to the food.
 if it is then move the food to a new random location.
 
