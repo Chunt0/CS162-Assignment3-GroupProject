@@ -1,3 +1,7 @@
+# Christopher Hunt
+# CS 162
+# Assignment 3
+
 import turtle
 import random
 

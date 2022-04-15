@@ -1,3 +1,7 @@
+# Christopher Hunt
+# CS 162
+# Assignment 3
+
 from chunt_food import Food
 from chunt_scoreboard import ScoreBoard
 from chunt_window import createWindow, outOfBounds
