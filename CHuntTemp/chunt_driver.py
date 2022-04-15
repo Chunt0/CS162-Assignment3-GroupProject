@@ -17,7 +17,6 @@ window.onkey(snake.down, 's')
 window.onkey(snake.left, 'a')
 window.onkey(snake.right, 'd')
 
-
-score.updateScore()
-
-window.exitonclick()
+while True:
+    window.update()
+    score.updateScore()
