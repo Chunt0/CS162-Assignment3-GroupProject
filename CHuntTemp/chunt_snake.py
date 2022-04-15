@@ -47,6 +47,7 @@ class Snake:
         scoreboard.updateScore()
 
     def slither(self):
+        # Move head of snake
         if self.head.heading() == 0:  # Move 20 pixels right
             x = self.head.xcor()
             self.head.setx(x+20)
@@ -59,6 +60,20 @@ class Snake:
         if self.head.heading() == 270:  # Move 20 pixels down
             y = self.head.ycor()
             self.head.setx(y-20)
+
+        # Move body of snake
+        if(len(self.body) > 0):
+            for index in range(len(self.body)-1, 0 , -1): # Cycle from last in list to first
+                if index == 0:      
+                    x = self.head.xcor()
+                    y = self.head.ycor()
+                    self.body[index].goto((x,y))
+
+                else:
+                    x = self.body[index-1].xcor()
+                    y = self.body[index-1].ycor()
+                    self.body[index].goto((x,y))
+
          
 
 
