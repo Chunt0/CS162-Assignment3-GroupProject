@@ -16,6 +16,6 @@ window.onkey(snake.down, 's')
 window.onkey(snake.left, 'a')
 window.onkey(snake.right, 'd')
 
-score.rewrite()
+score.updateScore()
 
 window.exitonclick()
