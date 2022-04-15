@@ -6,7 +6,7 @@ class Snake:
         self.head     = turtle.Turtle()
         self.body     = []
         self.color    = color
-        self.length   = 10
+        self.length   = 10  # changes based on score multiply
         self.speed    = 5
         self.position = self.head.position()
         self.path     = []
@@ -15,15 +15,22 @@ class Snake:
         self.head.penup()
 
         for idx in range(self.length):
-            segment = turtle.Turtle("circle")
+            segment = turtle.Turtle(shape="circle", visible=False)
             segment.penup()
-            segment.hideturtle()
-            # change colors (from colors list)
+# change colors (from colors list)
             segment.color(self.color)
             self.body.append(segment)
 
-    def increase_length(self, amt):
+    def increase_length(self, amt=4):
         self.length += amt
+#        print("Snake length is now:", self.length)
+        for idx in range(amt):
+            segment = turtle.Turtle(shape="circle", visible=False)
+            segment.penup()
+            # change colors (from colors list)
+            segment.color(self.color)
+            self.body.insert(0, segment)
+        self.speed += 1
         return self.length
 
     def up(self):
@@ -45,6 +52,7 @@ class Snake:
     def forward(self):
         self.position = self.head.position()
         segment = self.body.pop(0)
+        segment.hideturtle()
         segment.goto(self.position)
         segment.showturtle()
         self.body.append(segment)
@@ -77,6 +85,8 @@ map.onkey(snake.up, 'w')
 map.onkey(snake.down, 's')
 map.onkey(snake.left, 'a')
 map.onkey(snake.right, 'd')
+
+map.onkey(snake.increase_length, 'i')
 
 map.onkey(stop, 'q')
 
