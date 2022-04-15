@@ -33,6 +33,19 @@ class Scoreboard:
             move=False,
         )
 
+    def set_score(self, new_score: int):
+        """Accepts new score and redraws"""
+        # We could separate these tasks, but let's eliminate desynchronization risk
+        self.score = new_score
+        self.update()
+
+    def increment_score(self, increment: int):
+        """Changes score by increment and redraws"""
+        # Equivalent to iadd, just as a method instead of operator
+        self.score += addend
+        self.update()
+        return self
+
     def __iadd__(self, addend: int):
         """Allows the scoreboard to be incremented by an integer"""
         # Scoreboard += 1 would increment the score variable and rewrite the board itself
