@@ -20,3 +20,4 @@ window.onkey(snake.right, 'd')
 while True:
     window.update()
     score.updateScore()
+    snake.head.shape("turtle")
