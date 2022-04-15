@@ -1,61 +1,70 @@
 import turtle
-import utils
 import random
 
-class Food():
+class Food:
     def __init__(self):
         self.food = turtle.Turtle()
-        self.food.color("black") # Could be randomized
-        self.food.shape('square') # Could be randomized
-        self.food.speed(0) # This food ain't goin anywhere
+        self.food.color("black")
+        self.food.shape("square")
+        self.food.speed(0)
         self.food.penup()
-        self.food.goto((0,200)) # Initial food location
+        self.food.goto((0,200))
 
-"""
-I think the food class really doesn't need any methods.
-It pretty much should just sit still and do nothing.
-The only time anything should happen is dependent on the snake.
-If the snake gets within a certain distance, the food should
-randomly relocate itself and that is it.
-
-Score board will need to be updated, and snake length with need to be updated
-
-perhaps this mock up of a detection function could be added to the snake class?
-or it could be apart of the driver functions
+    def eatenFood(self, snake):
+        if(snake.direction(self.food) < 20):
+            x_loc = random.randint(-370,370)
+            y_loc = random.randint(-370, 370)
+            self.food.goto(x_loc, y_loc)
+            return True
+        else:
+            return False
 
 
-Take a look:
-============
+# 
+# I think the food class really doesn't need any methods.
+# It pretty much should just sit still and do nothing.
+# The only time anything should happen is dependent on the snake.
+# If the snake gets within a certain distance, the food should
+# randomly relocate itself and that is it.
 
-Game mechanic to detect how close the snake is to the food.
-if it is then move the food to a new random location.
+# Score board will need to be updated, and snake length with need to be updated
 
-def checkSnakeDistFromFood(snake, food):
-    if snake.distance(food) < 20:
-    	x = random.randint(-270, 270) # these values can change, depends on how large our screen is to begin
-    	y = random.randint(-270, 270) # same as above
-    	food.goto(x, y) # relocate food turtle
+# perhaps this mock up of a detection function could be added to the snake class?
+# or it could be apart of the driver functions
 
 
-    # This could be turned into a function and added to snake class?
-    		# Adding segment
-    	new_segment = turtle.Turtle()
-    	new_segment.speed(0)
-    	new_segment.shape("cirlce")
-    	new_segment.color(snake.color) 
-    	new_segment.penup()
-    	snake.body.append(new_segment)
+# Take a look:
+# ============
+
+# Game mechanic to detect how close the snake is to the food.
+# if it is then move the food to a new random location.
+
+# def checkSnakeDistFromFood(snake, food):
+#     if snake.distance(food) < 20:
+#     	x = random.randint(-270, 270) # these values can change, depends on how large our screen is to begin
+#     	y = random.randint(-270, 270) # same as above
+#     	food.goto(x, y) # relocate food turtle
+
+
+#     # This could be turned into a function and added to snake class?
+#     		# Adding segment
+#     	new_segment = turtle.Turtle()
+#     	new_segment.speed(0)
+#     	new_segment.shape("cirlce")
+#     	new_segment.color(snake.color) 
+#     	new_segment.penup()
+#     	snake.body.append(new_segment)
     	
-        delay -= 0.001
-    	score += 10 # Add score to the score board
+#         delay -= 0.001
+#     	score += 10 # Add score to the score board
     	
         
-        if score > high_score:
-    		high_score = score
+#         if score > high_score:
+#     		high_score = score
     	
-        # This might use a "pen" created from the scoreboard class, and then use the .write function to update the score
-        pen.clear()
-    	pen.write("Score : {} High Score : {} ".format(
-    		score, high_score), align="center", font=("candara", 24, "bold"))
+#         # This might use a "pen" created from the scoreboard class, and then use the .write function to update the score
+#         pen.clear()
+#     	pen.write("Score : {} High Score : {} ".format(
+#     		score, high_score), align="center", font=("candara", 24, "bold"))
 
-"""
+# 
