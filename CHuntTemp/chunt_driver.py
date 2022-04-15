@@ -1,6 +1,6 @@
 from chunt_food import Food
 from chunt_scoreboard import ScoreBoard
-from chunt_window import createWindow
+from chunt_window import createWindow, outOfBounds
 from chunt_snake import Snake
 
 
@@ -20,4 +20,6 @@ window.onkey(snake.right, 'd')
 while True:
     window.update()
     score.updateScore()
-    snake.head.shape("turtle")
+    if(outOfBounds(snake)):
+        pass
+    
