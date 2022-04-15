@@ -20,5 +20,11 @@ def outOfBounds(snake, scoreboard, food):
         scoreboard.resetScore()
         food.goto((0,200))
 
-
-
+def snakeEatsItself(snake):
+    for bod in snake.body:
+        if bod.distance(snake.head) < 20:
+            time.sleep(1)
+            snake.head.goto((0,0))
+            for bod in snake.body:
+                bod.goto((1000,1000))
+            snake.body.clear()
