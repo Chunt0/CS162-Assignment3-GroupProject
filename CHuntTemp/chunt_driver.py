@@ -26,6 +26,8 @@ while True:
 
     if(food.eatenFood(snake,score)): # checks to see if snake has moved within 20 pixels of "food"
         pass
-
+    
+    snake.slither()
+    # Now update body
 
 
