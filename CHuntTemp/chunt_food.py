@@ -10,11 +10,12 @@ class Food:
         self.food.penup()
         self.food.goto((0,200))
 
-    def eatenFood(self, snake):
+    def eatenFood(self, snake, scoreboard):
         if(snake.direction(self.food) < 20):
             x_loc = random.randint(-370,370)
             y_loc = random.randint(-370, 370)
             self.food.goto(x_loc, y_loc)
+            snake.addBody(scoreboard)
             return True
         else:
             return False
@@ -38,12 +39,6 @@ class Food:
 
 # Game mechanic to detect how close the snake is to the food.
 # if it is then move the food to a new random location.
-
-# def checkSnakeDistFromFood(snake, food):
-#     if snake.distance(food) < 20:
-#     	x = random.randint(-270, 270) # these values can change, depends on how large our screen is to begin
-#     	y = random.randint(-270, 270) # same as above
-#     	food.goto(x, y) # relocate food turtle
 
 
 #     # This could be turned into a function and added to snake class?
