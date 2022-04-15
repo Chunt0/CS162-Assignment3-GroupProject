@@ -10,8 +10,7 @@ class Snake:
         self.head.shape("triangle")
         self.head.color("red")
         self.head.penup()
-        self.head.direction = "Stop"
-        
+        self.head.speed(0)
 
     def up(self):
         if self.head.heading() != 270:
