@@ -20,6 +20,12 @@ window.onkey(snake.right, 'd')
 while True:
     window.update()
     score.updateScore()
-    if(outOfBounds(snake)):
+
+    if(outOfBounds(snake)): # Checks to see if snake is out of bounds
         pass
-    
+
+    if(food.eatenFood(snake,score)): # checks to see if snake has moved within 20 pixels of "food"
+        pass
+
+
+
