@@ -42,9 +42,8 @@ class Scoreboard:
     def increment_score(self, increment: int):
         """Changes score by increment and redraws"""
         # Equivalent to iadd, just as a method instead of operator
-        self.score += addend
+        self.score += increment
         self.update()
-        return self
 
     def __iadd__(self, addend: int):
         """Allows the scoreboard to be incremented by an integer"""

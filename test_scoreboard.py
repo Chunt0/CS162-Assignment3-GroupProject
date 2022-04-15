@@ -9,6 +9,16 @@ import turtle, utils, time, scoreboard as sb
 
 board = sb.Scoreboard((40, 200))
 
+# ugly tests of set_score, increment score
+board.set_score(42000)
+time.sleep(5)
+board.increment_score(-40000)
+time.sleep(5)
+board.increment_score(8000)
+time.sleep(5)
+
+# Longer draw test
+board.set_score(0)
 for i in range(0, 1000 // 10):  # If the player goes above the 1000s I will eat my hat
     time.sleep(0.1)
     board += 11
