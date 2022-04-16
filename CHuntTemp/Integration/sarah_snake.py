@@ -41,7 +41,7 @@ class Snake:
     def addBody(self):
         new_body = turtle.Turtle()
         new_body.speed(0)
-        new_body.shape("square")
+        new_body.shape("circle")
         color = random.choice(["red", "orange", "yellow", "green", "blue", "purple",])
         new_body.color(color)
         new_body.penup()
@@ -79,6 +79,18 @@ class Snake:
 
 #[~]
     def slither(self):
+        # Move body of snake
+        if(len(self.body) > 0):
+            for index in range(len(self.body)-1, 0 , -1): # Cycle from last in list to first
+                if index == 0:      
+                    x = self.head.xcor()
+                    y = self.head.ycor()
+                    self.body[index].goto((x,y))
+
+                else:
+                    x = self.body[index-1].xcor()
+                    y = self.body[index-1].ycor()
+                    self.body[index].goto((x,y))
         # Move head of snake
         if self.head.heading() == 0:  # Move 20 pixels right
             x = self.head.xcor()
@@ -92,16 +104,3 @@ class Snake:
         if self.head.heading() == 270:  # Move 20 pixels down
             y = self.head.ycor()
             self.head.setx(y-20)
-
-        # Move body of snake
-        if(len(self.body) > 0):
-            for index in range(len(self.body)-1, 0 , -1): # Cycle from last in list to first
-                if index == 0:      
-                    x = self.head.xcor()
-                    y = self.head.ycor()
-                    self.body[index].goto((x,y))
-
-                else:
-                    x = self.body[index-1].xcor()
-                    y = self.body[index-1].ycor()
-                    self.body[index].goto((x,y))

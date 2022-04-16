@@ -58,7 +58,7 @@ def snakeMain():
         if(outOfBounds(x_head, y_head) or snakeEatsItself(snake)):
             # Reset Game
             time.sleep(1)
-            snake.head.goto((0,0)) # Move snake head back to start
+            snake.head.goto(0,0) # Move snake head back to start
 
             # Get ride of the snake's body
             for segment in snake.body:
