@@ -32,7 +32,7 @@ def outOfBounds(xcor, ycor):
 def snakeMain():
     """Main Game program, intializes all variables and starts game loop."""
     window = createWindow()
-    #window.tracer(0)
+    window.tracer(0)
     food = Food()
     snake = Snake()
     score = Scoreboard()
