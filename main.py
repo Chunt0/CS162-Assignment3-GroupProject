@@ -93,7 +93,7 @@ def snakeMain():
                 segment.goto((1000,1000))
             snake.body.clear()
 
-            score.resetScore()
+            score.reset_score()
         
         time.sleep(.1)
 
