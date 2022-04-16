@@ -14,21 +14,19 @@ def createWindow():
     window.setup(width=800, height=800)    
     return window
 
-def outOfBounds(snake, scoreboard, food):
-    if snake.head.xcor() > 390 or snake.head.xcor() < -390 or snake.head.ycor > 390 or snake.head.ycor < -390:
-        time.sleep(1)
-        snake.head.goto((0,0))
-        for bod in snake.body:
-            bod.goto((1000,1000))
-        snake.body.clear()
-        scoreboard.resetScore()
-        food.goto((0,200))
+def outOfBounds(xcor, ycor):
+    if (xcor > 390 or xcor < -390 or ycor > 390 or ycor < -390):
+        return True
+    else:
+        return False
 
 def snakeEatsItself(snake):
+    collision = False
     for bod in snake.body:
         if bod.distance(snake.head) < 20:
-            time.sleep(1)
-            snake.head.goto((0,0))
-            for bod in snake.body:
-                bod.goto((1000,1000))
-            snake.body.clear()
+            collision = True
+    if collision:
+        return True
+    else:
+        return False
+

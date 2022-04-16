@@ -38,7 +38,7 @@ class Snake:
 #         return self.length
 
 #[~]
-    def addBody(self, scoreboard):
+    def addBody(self):
         new_body = turtle.Turtle()
         new_body.speed(0)
         new_body.shape("square")
@@ -46,7 +46,6 @@ class Snake:
         new_body.color(color)
         new_body.penup()
         self.body.append(new_body)
-        scoreboard.set_score(1)
 
 
     def up(self):
