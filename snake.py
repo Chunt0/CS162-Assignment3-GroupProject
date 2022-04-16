@@ -1,3 +1,10 @@
+"""File: snake.py
+Team No.: 1. THE SNAKE CHARMERS
+Author name: Sarah Mortensen, Christopher Hunt
+Date completed: 04/XX/2022
+Description: Implements snake object. Handles movements and segmentation.
+"""
+
 import turtle
 import utils
 import random

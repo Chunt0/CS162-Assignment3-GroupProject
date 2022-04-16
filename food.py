@@ -1,6 +1,9 @@
-# Christopher Hunt
-# CS 162
-# Assignment 3
+"""File: food.py
+Team No.: 1. THE SNAKE CHARMERS
+Author name: Christopher Hunt
+Date completed: 04/XX/2022
+Description: Implements food object. Detects collision.
+"""
 
 import turtle
 import random

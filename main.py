@@ -1,6 +1,13 @@
-from chunt_food import Food
-from phoenix_scoreboard import Scoreboard
-from sarah_snake import Snake
+"""File: main.py
+Team No.: 1. THE SNAKE CHARMERS
+Author name: Christopher Hunt
+Date completed: 04/XX/2022
+Description: Implements the snake game.
+"""
+
+from food import Food
+from scoreboard import Scoreboard
+from snake import Snake
 import time, turtle
 
 def createWindow():
@@ -78,3 +85,6 @@ def snakeMain():
         # Increment snake head and body    
         snake.slither()
         time.sleep(.1)
+
+if __name__=="__main__":
+    snakeMain()
