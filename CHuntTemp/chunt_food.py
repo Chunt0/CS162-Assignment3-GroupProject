@@ -15,6 +15,13 @@ class Food:
         self.food.goto((0,200))
 
     def eatenFood(self, snake, scoreboard):
+        """
+        If the distance of the snake is less than 20 pixels from the food
+        chooose random x and y coordinates and move the food to that location.
+        Then run the addBody() Snake method.
+        Return true, this may trigger another event in the driver.
+        Else flase.
+        """
         if(snake.direction(self.food) < 20):
             x_loc = random.randint(-370,370)
             y_loc = random.randint(-370, 370)

@@ -10,19 +10,17 @@ import utils, turtle
 
 class Scoreboard:
     def __init__(self, coords=(0, 300)):
-        self.score = 0
-
         """
         Moves to starting coords
         ToDo: Make turtle invisble (after testing first)
         FixMe: Turtle isn't writing exactly at coords, does it matter?
         """
         self.cursor = turtle.Turtle()
+        self.score = 0
         self.cursor.penup()
-        self.cursor.hideturtle() #[~]
+        self.cursor.hideturtle() #[~] You could still see the turtle shape, use this to hide it.
         self.cursor.goto(coords)
-        self.update()  # First write (should always be 0)
-
+        self.update()  # First write (should always be 0)  
 
     def update(self):
         """Redraws score. Best used internally."""
@@ -55,3 +53,10 @@ class Scoreboard:
 
     def game_over(self):
         """TODO: This. Need some sort of game-over routine as per requirements."""
+
+#[~] Added this function. -chunt
+    def resetScore(self):
+        """Resets Scoreboard"""
+        self.score = 0
+        self.update()
+        return True
