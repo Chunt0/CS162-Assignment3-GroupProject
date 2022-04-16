@@ -16,7 +16,7 @@ class Snake:
 #             segment = turtle.Turtle(shape="circle", visible=False)
 #             segment.penup()
 # # change colors (from colors list)
-#             segment.color(self.color)
+#             segment.color("purple")
 #             self.body.append(segment)
 
 
@@ -43,10 +43,14 @@ class Snake:
         color = random.choice(["red", "orange", "yellow", "green", "blue", "purple",])
         new_body.color(color)
         new_body.penup()
+
+        # code below may be glitchy #
         if(self.length > 0):
             location = self.body[(self.length-1)].position()
         else:
             location = self.head.position()
+        #############################
+        
         new_body.goto(location)
         self.body.append(new_body)
         self.length += 1
@@ -86,9 +90,8 @@ class Snake:
         # Move body of snake
         if(self.length > 0):
             if(self.length == 1):
-                x = self.head.xcor()
-                y = self.head.ycor()
-                self.body[0].goto(x,y)
+                head_position = self.head.position()
+                self.body[0].goto(head_position)
             else:
                 for index in range(self.length-1, 0 , -1): # Cycle from last in list to first
                     if (index != 0):
@@ -100,15 +103,4 @@ class Snake:
                         y = self.head.ycor()
                         self.body[0].goto(x,y)
         # Move head of snake
-        if self.head.heading() == 0:  # Move 20 pixels right
-            x = self.head.xcor()
-            self.head.setx(x+20)
-        if self.head.heading() == 90:  # Move 20 pixels up
-            y = self.head.ycor()
-            self.head.sety(y+20)
-        if self.head.heading() == 180:  # Move 20 pixels left
-            x = self.head.xcor()
-            self.head.setx(x-20)
-        if self.head.heading() == 270:  # Move 20 pixels down
-            y = self.head.ycor()
-            self.head.setx(y-20)
+        self.head.forward(20)

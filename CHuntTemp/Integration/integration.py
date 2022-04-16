@@ -21,10 +21,13 @@ def snakeEatsItself(snake):
         return True
     else:
         return False
-
-def outOfBounds(xcor, ycor):
+# needs tweeking, screen size is off.
+def outOfBounds(head_position):
     """Checks to see if snake.head is out of bounds"""
-    if (xcor > 400 or xcor < -400 or ycor > 400 or ycor < -400):
+    xcor = head_position[0]
+    ycor = head_position[1]
+    
+    if (xcor > 800 or xcor < -800 or ycor > 800 or ycor < -800):
         return True
     else:
         return False
@@ -50,12 +53,11 @@ def snakeMain():
         window.update()
 
         # Get Location of the snake's head 
-        x_head = snake.head.xcor()
-        y_head = snake.head.ycor()
+        head_position = snake.head.position()
         distance = snake.head.distance(food.food) # How far is the snake head from the food?
 
         # Is snake out of bounds or eatting itself?
-        if(outOfBounds(x_head, y_head) or snakeEatsItself(snake)):
+        if(outOfBounds(head_position) or snakeEatsItself(snake)):
             # Reset Game
             time.sleep(1)
             snake.head.goto(0,0) # Move snake head back to start
@@ -71,7 +73,7 @@ def snakeMain():
         # Is snake eatting food?
         if(food.eatenFood(distance)):
             snake.addBody()
-            score.set_score()
+            score += 1 # Using Scoreboard dunder method for "+="
 
         # Increment snake head and body    
         snake.slither()
