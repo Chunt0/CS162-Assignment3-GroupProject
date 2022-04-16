@@ -1,7 +1,7 @@
 """File: scoreboard.py
 Team No.: 1. THE SNAKE CHARMERS
 Author name: Phoenix Angulo, Christopher Hunt
-Date completed: 04/XX/2022
+Date completed: 04/16/2022
 Description: Implements the scoreboard for the snake game, with methods to update and display game over
 """
 
@@ -9,13 +9,22 @@ import turtle
 
 
 class Scoreboard:
-    def __init__(self, coords=(0, 300)):
-        self.score = 0
+    """Handles score-keeping, writing, and game-over display for Snake."""
 
+    def __init__(self, coords: turtle.Vec2D = (0, 300)):
+        """Initialize invisible turtle and write score at given coordinates.
+
+        Args:
+        coords (Tuple/Vec2D): Ordered pair of signed ints as (x,y).
+            Score will be written near here, but game_over doesn't care.
         """
-        Moves to starting coords
-        """
+        self.score = 0
+        """The games' score. Intended to be natural numbers only."""
+
         self.cursor = turtle.Turtle()
+        """Invisible Turtle. Written text is created nearby it."""
+
+        # Ready & Move to Starting Co-ordinates
         self.cursor.hideturtle()  # [~] You could still see the turtle shape, use this to hide it.
         self.cursor.penup()
         self.cursor.goto(coords)
@@ -23,7 +32,7 @@ class Scoreboard:
         self.update()  # First write (should always be 0)
 
     def update(self):
-        """Redraws score. Best used internally."""
+        """Redraw score. Best used internally."""
         self.cursor.clear()
         self.cursor.write(
             arg=self.score,
@@ -33,27 +42,34 @@ class Scoreboard:
         )
 
     def set_score(self, new_score: int):
-        """Accepts new score and redraws"""
+        """Accept new score and redraw the board.
+
+        Args:
+        new_score (int): Should be a natural number. Can be a signed int.
+        """
         # We could separate these tasks, but let's eliminate desynchronization risk
         self.score = new_score
         self.update()
 
     def increment_score(self, increment: int):
-        """Changes score by increment and redraws"""
+        """Change score by increment and redraw the board.
+
+        Args:
+        increment (int): Any integer. Negatives will decrease score.
+        """
         # Equivalent to iadd, just as a method instead of operator
         self.score += increment
         self.update()
 
     def __iadd__(self, addend: int):
-        """Allows the scoreboard to be incremented by an integer"""
-        # Scoreboard += 1 would increment the score variable and rewrite the board itself
+        """Incremental-add Operator equivalent to increment_score."""
+        """Scoreboard += 1 would increment the score variable and rewrite the board itself"""
         self.score += addend
         self.update()
         return self
 
     def game_over(self):
-        """TODO: This. Need some sort of game-over routine as per requirements."""
-
+        """Erase scoreboard and draw game-over screen."""
         Y_ORIGIN = 80
         """Turtle starts here when writing the big game-over, then moves down."""
 
@@ -69,9 +85,8 @@ class Scoreboard:
             font=("Comic Sans", 24, "normal"),
         )
 
-    # [~] Added this function. -chunt
-    def resetScore(self):
-        """Resets Scoreboard"""
+    def resetScore(self):  # [~] Added this function. -chunt
+        """Set score to 0 and redraw board. Equivalent to set_score(0)."""
         self.score = 0
         self.update()
         return True
