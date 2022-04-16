@@ -1,4 +1,4 @@
-import chunt_integration
+import integration
 
 if __name__=="__main__":
-    chunt_integration.snakeMain()
+    integration.snakeMain()
