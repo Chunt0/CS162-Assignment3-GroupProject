@@ -14,8 +14,8 @@ def createWindow():
 def snakeEatsItself(snake):
     """Checks to see if snake.head is too close to any snake.body"""
     collision = False
-    for body in snake.body:
-        if (body.distance(snake.head) < 20):
+    for i in range(0, len(snake.body)):
+        if (snake.body[i].distance(snake.head) < 20):
             collision = True
     if collision:
         return True
@@ -57,7 +57,7 @@ def snakeMain():
         distance = snake.head.distance(food.food) # How far is the snake head from the food?
 
         # Is snake out of bounds or eatting itself?
-        if(outOfBounds(head_position) or snakeEatsItself(snake)):
+        if(outOfBounds(head_position)):
             # Reset Game
             time.sleep(1)
             snake.head.goto(0,0) # Move snake head back to start
@@ -69,7 +69,6 @@ def snakeMain():
 
             score.resetScore()
 
-
         # Is snake eatting food?
         if(food.eatenFood(distance)):
             snake.addBody()
@@ -77,4 +76,16 @@ def snakeMain():
 
         # Increment snake head and body    
         snake.slither()
+        
+        if (snakeEatsItself(snake)):
+            time.sleep(1)
+            snake.head.goto(0,0) # Move snake head back to start
+
+            # Get ride of the snake's body
+            for segment in snake.body:
+                segment.goto((1000,1000))
+            snake.body.clear()
+
+            score.resetScore()
+        
         time.sleep(.1)
