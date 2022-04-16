@@ -18,11 +18,11 @@ board = sb.Scoreboard((40, 200))
 
 # ugly tests of set_score, increment score
 board.set_score(42000)
-time.sleep(5)
+time.sleep(2)
 board.increment_score(-40000)
-time.sleep(5)
+time.sleep(2)
 board.increment_score(8000)
-time.sleep(5)
+time.sleep(2)
 
 # Longer draw test
 board.set_score(0)
