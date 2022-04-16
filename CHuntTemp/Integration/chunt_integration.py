@@ -3,6 +3,14 @@ from phoenix_scoreboard import Scoreboard
 from sarah_snake import Snake
 import time, turtle
 
+def createWindow():
+    # Creating a window screen
+    window = turtle.Screen()
+    window.title("Snake Game")
+    window.bgcolor("brown")
+    window.setup(width=800, height=800)    
+    return window
+
 def snakeEatsItself(snake):
     collision = False
     for bod in snake.body:
@@ -13,13 +21,6 @@ def snakeEatsItself(snake):
     else:
         return False
 
-def createWindow():
-    # Creating a window screen
-    window = turtle.Screen()
-    window.title("Snake Game")
-    window.bgcolor("brown")
-    window.setup(width=800, height=800)    
-    return window
 
 def outOfBounds(xcor, ycor):
     if (xcor > 390 or xcor < -390 or ycor > 390 or ycor < -390):
@@ -73,8 +74,3 @@ def snakeMain():
         # Increment snake head and body    
         snake.slither()
         time.sleep(.1)
-
-
-
-if __name__=="__main__":
-    snakeMain()
