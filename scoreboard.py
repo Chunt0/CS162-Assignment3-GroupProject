@@ -85,7 +85,7 @@ class Scoreboard:
             font=("Comic Sans", 24, "normal"),
         )
 
-    def resetScore(self):  # [~] Added this function. -chunt
+    def reset_score(self):  # [~] Added this function. -chunt
         """Set score to 0 and redraw board. Equivalent to set_score(0)."""
         self.score = 0
         self.update()
