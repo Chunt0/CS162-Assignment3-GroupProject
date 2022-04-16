@@ -6,7 +6,7 @@ import time, turtle
 def createWindow():
     """Creates a new window"""
     window = turtle.Screen()
-    window.title("Snake Game")
+    window.title("Snake Charmer")
     window.bgcolor("brown")
     window.setup(width=800, height=800)    
     return window
