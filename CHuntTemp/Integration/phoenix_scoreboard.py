@@ -32,10 +32,10 @@ class Scoreboard:
             move=False,
         )
 
-    def set_score(self, new_score: 1):
+    def set_score(self):
         """Accepts new score and redraws"""
         # We could separate these tasks, but let's eliminate desynchronization risk
-        self.score = new_score
+        self.score += 1
         self.update()
 
     def increment_score(self, increment: int):

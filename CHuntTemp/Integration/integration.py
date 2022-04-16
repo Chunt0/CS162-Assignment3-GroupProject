@@ -4,7 +4,7 @@ from sarah_snake import Snake
 import time, turtle
 
 def createWindow():
-    # Creating a window screen
+    """Creates a new window"""
     window = turtle.Screen()
     window.title("Snake Game")
     window.bgcolor("brown")
@@ -12,23 +12,25 @@ def createWindow():
     return window
 
 def snakeEatsItself(snake):
+    """Checks to see if snake.head is too close to any snake.body"""
     collision = False
-    for bod in snake.body:
-        if bod.distance(snake.head) < 20:
+    for body in snake.body:
+        if (body.distance(snake.head) < 20):
             collision = True
     if collision:
         return True
     else:
         return False
 
-
 def outOfBounds(xcor, ycor):
-    if (xcor > 390 or xcor < -390 or ycor > 390 or ycor < -390):
+    """Checks to see if snake.head is out of bounds"""
+    if (xcor > 400 or xcor < -400 or ycor > 400 or ycor < -400):
         return True
     else:
         return False
 
 def snakeMain():
+    """Main Game program, intializes all variables and starts game loop."""
     window = createWindow()
     #window.tracer(0)
     food = Food()
@@ -50,7 +52,7 @@ def snakeMain():
         # Get Location of the snake's head 
         x_head = snake.head.xcor()
         y_head = snake.head.ycor()
-        distance = int(snake.head.distance(food.food)) # How far is the snake head from the food?
+        distance = snake.head.distance(food.food) # How far is the snake head from the food?
 
         # Is snake out of bounds or eatting itself?
         if(outOfBounds(x_head, y_head) or snakeEatsItself(snake)):
