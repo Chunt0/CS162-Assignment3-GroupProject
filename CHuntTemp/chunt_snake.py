@@ -7,7 +7,6 @@ import random
 
 class Snake:
     def __init__(self):
-        """ This only runs once """
         self.head = turtle.Turtle()
         self.body = []
         self.head.shape("triangle")
