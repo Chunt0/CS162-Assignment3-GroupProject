@@ -6,10 +6,7 @@ class Snake:
     def __init__(self):
         self.head     = turtle.Turtle()
         self.body     = []
-        self.length   = 10  # changes based on score multiply
-        self.speed    = 5
-        self.position = self.head.position()
-        self.path     = []
+        self.length   = 0
         self.head.shape('triangle')
         self.head.color("red")
         self.head.penup()
@@ -45,7 +42,13 @@ class Snake:
         color = random.choice(["red", "orange", "yellow", "green", "blue", "purple",])
         new_body.color(color)
         new_body.penup()
+        if(self.length > 0):
+            location = self.body[(self.length-1)].position()
+        else:
+            location = self.head.position()
+        new_body.goto(location)
         self.body.append(new_body)
+        self.length += 1
 
 
     def up(self):
@@ -80,17 +83,21 @@ class Snake:
 #[~]
     def slither(self):
         # Move body of snake
-        if(len(self.body) > 0):
-            for index in range(len(self.body)-1, 0 , -1): # Cycle from last in list to first
-                if index == 0:      
-                    x = self.head.xcor()
-                    y = self.head.ycor()
-                    self.body[index].goto(x,y)
-
-                else:
-                    x = self.body[index-1].xcor()
-                    y = self.body[index-1].ycor()
-                    self.body[index].goto(x,y)
+        if(self.length > 0):
+            if(self.length == 1):
+                x = self.head.xcor()
+                y = self.head.ycor()
+                self.body[0].goto(x,y)
+            else:
+                for index in range(self.length-1, 0 , -1): # Cycle from last in list to first
+                    if (index != 0):
+                        x = self.body[index-1].xcor()
+                        y = self.body[index-1].ycor()
+                        self.body[index].goto(x,y)
+                    else:
+                        x = self.head.xcor()
+                        y = self.head.ycor()
+                        self.body[0].goto(x,y)
         # Move head of snake
         if self.head.heading() == 0:  # Move 20 pixels right
             x = self.head.xcor()
