@@ -45,13 +45,13 @@ class Snake:
         new_body.penup()
 
         # code below may be glitchy #
-        if(self.length > 0):
-            location = self.body[(self.length-1)].position()
-        else:
-            location = self.head.position()
-        #############################
-        
-        new_body.goto(location)
+        # if(self.length > 0):
+        #     location = self.body[(self.length-1)].position()
+        # else:
+        #     location = self.head.position()
+        # #############################
+
+        # new_body.goto(location)
         self.body.append(new_body)
         self.length += 1
 
@@ -88,19 +88,20 @@ class Snake:
 #[~]
     def slither(self):
         # Move body of snake
-        if(self.length > 0):
-            if(self.length == 1):
-                head_position = self.head.position()
-                self.body[0].goto(head_position)
-            else:
-                for index in range(self.length-1, 0 , -1): # Cycle from last in list to first
-                    if (index != 0):
-                        x = self.body[index-1].xcor()
-                        y = self.body[index-1].ycor()
-                        self.body[index].goto(x,y)
-                    else:
-                        x = self.head.xcor()
-                        y = self.head.ycor()
-                        self.body[0].goto(x,y)
+
+        if(self.length == 1):
+            x = self.head.xcor()
+            y = self.head.ycor()
+            self.body[0].goto(x, y)
+        elif(self.length > 1):
+            for index in range(self.length-1, 0 , -1): # Cycle from last in list to first
+                if (index != 0):
+                    x = self.body[index-1].xcor()
+                    y = self.body[index-1].ycor()
+                    self.body[index].goto(x, y)
+                else:
+                    x = self.head.xcor()
+                    y = self.head.ycor()
+                    self.body[0].goto(x, y)
         # Move head of snake
         self.head.forward(20)
