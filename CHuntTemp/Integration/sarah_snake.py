@@ -85,12 +85,12 @@ class Snake:
                 if index == 0:      
                     x = self.head.xcor()
                     y = self.head.ycor()
-                    self.body[index].goto((x,y))
+                    self.body[index].goto(x,y)
 
                 else:
                     x = self.body[index-1].xcor()
                     y = self.body[index-1].ycor()
-                    self.body[index].goto((x,y))
+                    self.body[index].goto(x,y)
         # Move head of snake
         if self.head.heading() == 0:  # Move 20 pixels right
             x = self.head.xcor()
