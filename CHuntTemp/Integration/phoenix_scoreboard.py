@@ -9,19 +9,20 @@ import utils, turtle
 
 
 class Scoreboard:
-    def __init__(self, coords=(0, 0)):
+    def __init__(self, coords=(0, 300)):
         self.score = 0
 
         """
         Moves to starting coords
-        TODO: Make turtle invisble (after testing first)
-        FIXME: Turtle isn't writing exactly at coords, does it matter?
+        ToDo: Make turtle invisble (after testing first)
+        FixMe: Turtle isn't writing exactly at coords, does it matter?
         """
         self.cursor = turtle.Turtle()
         self.cursor.penup()
+        self.cursor.hideturtle() #[~]
         self.cursor.goto(coords)
-
         self.update()  # First write (should always be 0)
+
 
     def update(self):
         """Redraws score. Best used internally."""

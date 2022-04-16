@@ -4,10 +4,10 @@ from phoenix_scoreboard import Scoreboard
 from sarah_snake import Snake
 import utils
 
-score = Scoreboard()
+window = createWindow()
 food = Food()
 snake = Snake()
-window = createWindow()
+score = Scoreboard()
 
 
 # Set up keyboard inputs.
@@ -17,3 +17,5 @@ window.onkey(snake.down, 's')
 window.onkey(snake.left, 'a')
 window.onkey(snake.right, 'd')
 
+
+window.exitonclick()
