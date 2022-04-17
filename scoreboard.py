@@ -92,7 +92,7 @@ class Scoreboard:
         return True
 
     def reset_game(self, snake):
-        """Destroy the snake body, set it to origin, and set score to 0."""
+        """Destroy the snake body, set it to origin, creates two snake body segments, and set score to 0."""
         time.sleep(1)
         snake.head.goto(0,0) # Move snake head back to start
 
