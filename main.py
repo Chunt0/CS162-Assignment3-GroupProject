@@ -15,9 +15,9 @@ def snake_main():
     """Main Game program, intializes all variables and starts game loop."""
     window = create_window()
     window.tracer(0)
-    food = Food()
-    snake = Snake()
     score = Scoreboard()
+    snake = Snake()
+    food = Food()
 
     # Set up keyboard inputs.
     window.listen()
