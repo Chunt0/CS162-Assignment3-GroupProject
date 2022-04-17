@@ -34,10 +34,12 @@ def outOfBounds(head_position):
     xcor = head_position[0]
     ycor = head_position[1]
     
-    if (xcor > 800 or xcor < -800 or ycor > 800 or ycor < -800):
+    if (xcor > 370 or xcor < -370 or ycor > 370 or ycor < -370):
         return True
     else:
         return False
+
+
 
 def snakeMain():
     """Main Game program, intializes all variables and starts game loop."""
@@ -54,7 +56,6 @@ def snakeMain():
     window.onkey(snake.down, 's')
     window.onkey(snake.left, 'a')
     window.onkey(snake.right, 'd')
-
 
     while True:
         window.update()

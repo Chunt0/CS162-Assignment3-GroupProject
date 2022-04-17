@@ -50,15 +50,6 @@ class Snake:
         color = random.choice(["red", "orange", "yellow", "green", "blue", "purple",])
         new_body.color(color)
         new_body.penup()
-
-        # code below may be glitchy #
-        # if(self.length > 0):
-        #     location = self.body[(self.length-1)].position()
-        # else:
-        #     location = self.head.position()
-        # #############################
-
-        # new_body.goto(location)
         self.body.append(new_body)
         self.length += 1
 
@@ -94,7 +85,7 @@ class Snake:
 
 #[~]
     def slither(self):
-        
+        # Move body of snake
         for index in range(self.length-1, 0, -1): # Cycle from last in list to first
             x = self.body[index-1].xcor()
             y = self.body[index-1].ycor()
