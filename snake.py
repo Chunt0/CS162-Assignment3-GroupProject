@@ -19,7 +19,6 @@ class Snake:
         self.head.shape('triangle')
         self.head.color("red")
         self.head.penup()
-        self.head.direction = "Stop"
 
 #         for idx in range(self.length):
 #             segment = turtle.Turtle(shape="circle", visible=False)
@@ -98,3 +97,4 @@ class Snake:
             self.body[0].goto(x, y)
         # Move head of snake
         self.head.forward(20)
+
