@@ -39,8 +39,35 @@ def outOfBounds(head_position):
     else:
         return False
 
+def reset_game(snake: Snake, score: Scoreboard):
+    """Destroy the snake body, set it to origin, and set score to 0."""
+    time.sleep(1)
+    snake.head.goto(0,0) # Move snake head back to start
+
+    # Get rid of the snake's body
+    for index in range(0,snake.length):
+        snake.body[index].goto(1000,1000)
+    snake.body.clear()
+    snake.length = 0
+
+    score.reset_score()
+
 def snakeMain():
     """Main Game program, intializes all variables and starts game loop."""
+
+    def reset_game():
+        """Destroy the snake body, set it to origin, and set score to 0."""
+        time.sleep(1)
+        snake.head.goto(0,0) # Move snake head back to start
+
+        # Get rid of the snake's body
+        for index in range(0,snake.length):
+            snake.body[index].goto(1000,1000)
+        snake.body.clear()
+        snake.length = 0
+
+        score.reset_score()
+
     window = createWindow()
     window.tracer(0)
     food = Food()
@@ -60,41 +87,19 @@ def snakeMain():
 
         # Get Location of the snake's head 
         head_position = snake.head.position()
-        distance = snake.head.distance(food.food) # How far is the snake head from the food?
+        distance = snake.head.distance(food.food) # How far is the snake head from the food
 
-        # Is snake out of bounds?
-        if(outOfBounds(head_position)):
-            # Reset Game
-            time.sleep(1)
-            snake.head.goto(0,0) # Move snake head back to start
-
-            # Get ride of the snake's body
-            for index in range(0, snake.length):
-                snake.body[index].goto(1000,1000)
-            snake.body.clear()
-            snake.length = 0
-
-            score.reset_score()
-
-        # Is snake eatting food?
+        # Is snake eating food?
         if(food.eatenFood(distance)):
             snake.addBody()
             score += 1 # Using Scoreboard dunder method for "+="
 
         # Increment snake head and body    
         snake.slither()
-        
-        if (snakeEatsItself(snake)):
-            time.sleep(1)
-            snake.head.goto(0,0) # Move snake head back to start
 
-            # Get ride of the snake's body
-            for index in range(0,snake.length):
-                snake.body[index].goto(1000,1000)
-            snake.body.clear()
-            snake.length = 0
-
-            score.reset_score()
+        #Two lose conditions: out of bounds or autocannibalism
+        if (outOfBounds(head_position)or snakeEatsItself(snake)):
+            reset_game()
         
         time.sleep(.1)
 
