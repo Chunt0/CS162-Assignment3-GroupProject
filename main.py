@@ -52,21 +52,22 @@ def reset_game(snake: Snake, score: Scoreboard):
 
     score.reset_score()
 
+def reset_game(snake, score):
+    """Destroy the snake body, set it to origin, and set score to 0."""
+    time.sleep(1)
+    snake.head.goto(0,0) # Move snake head back to start
+
+    # Get rid of the snake's body
+    for index in range(0,snake.length):
+        snake.body[index].goto(1000,1000)
+    snake.body.clear()
+    snake.length = 0
+    score.reset_score()
+
 def snakeMain():
     """Main Game program, intializes all variables and starts game loop."""
 
-    def reset_game():
-        """Destroy the snake body, set it to origin, and set score to 0."""
-        time.sleep(1)
-        snake.head.goto(0,0) # Move snake head back to start
 
-        # Get rid of the snake's body
-        for index in range(0,snake.length):
-            snake.body[index].goto(1000,1000)
-        snake.body.clear()
-        snake.length = 0
-
-        score.reset_score()
 
     window = createWindow()
     window.tracer(0)
@@ -110,8 +111,8 @@ def snakeMain():
         snake.slither()
 
         #Two lose conditions: out of bounds or autocannibalism
-        if (outOfBounds(head_position)or snakeEatsItself(snake)):
-            reset_game()
+        if (outOfBounds(head_position) or snakeEatsItself(snake)):
+            reset_game(snake, score)
         
         time.sleep(.1)
 
