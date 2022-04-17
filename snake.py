@@ -13,7 +13,9 @@ class Snake:
     def __init__(self):
         self.head     = turtle.Turtle()
         self.body     = []
+        """List of turtle objects representing each body segment."""
         self.length   = 0
+        """Length of body segments. Does not count head."""
         self.head.shape('triangle')
         self.head.color("red")
         self.head.penup()
