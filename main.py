@@ -68,7 +68,7 @@ def snakeMain():
             time.sleep(1)
             snake.head.goto(0,0) # Move snake head back to start
 
-            # Get ride of the snake's body
+            # Get rid of the snake's body
             for index in range(0, snake.length):
                 snake.body[index].goto(1000,1000)
             snake.body.clear()
