@@ -10,22 +10,18 @@ import utils
 import random
 
 class Snake:
-    def __init__(self):
+    def __init__(self,initial_segments:int = 2):
         self.head     = turtle.Turtle()
         self.body     = []
         """List of turtle objects representing each body segment."""
-        self.length   = 0
+        self.length   = 0  #Only addBody should change this!
         """Length of body segments. Does not count head."""
         self.head.shape('triangle')
         self.head.color("red")
         self.head.penup()
 
-#         for idx in range(self.length):
-#             segment = turtle.Turtle(shape="circle", visible=False)
-#             segment.penup()
-# # change colors (from colors list)
-#             segment.color("purple")
-#             self.body.append(segment)
+        while (self.length < initial_segments):
+            self.addBody()
 
 
 #[~] I'm not too sure what's going on here, like what is the significance of increasing by 4?
