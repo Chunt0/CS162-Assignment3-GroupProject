@@ -6,7 +6,6 @@ Description: Implements snake object. Handles movements and segmentation.
 """
 
 import turtle
-import utils
 import random
 
 class Snake:
