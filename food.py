@@ -17,7 +17,7 @@ class Food:
         self.food.penup()
         self.food.goto((0,200))
 
-    def eaten_food(self, distance):
+    def eaten_food(self, snake):
         """
         If the distance of the snake is less than 20 pixels from the food
         chooose random x and y coordinates and move the food to that location.
@@ -25,7 +25,7 @@ class Food:
         Return true, this may trigger another event in the driver.
         Else flase.
         """
-        if(distance < 20):
+        if(self.food.distance(snake.head) < 20):
             x_loc = random.randint(-370, 370)
             y_loc = random.randint(-370, 370)
             self.food.goto(x_loc, y_loc)

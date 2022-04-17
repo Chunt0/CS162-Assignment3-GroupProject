@@ -8,51 +8,8 @@ Description: Implements the snake game.
 from food import Food
 from scoreboard import Scoreboard
 from snake import Snake
-import time, turtle
-
-def create_window():
-    """Creates a new window"""
-    window = turtle.Screen()
-    window.title("Snake Charmer")
-    window.bgcolor("light blue")
-    window.setup(width=800, height=800)    
-    return window
-
-def ouroboros(snake):
-    """Checks to see if snake.head is too close to any snake.body"""
-    collision = False
-    for i in range(0, snake.length):
-        if (snake.body[i].distance(snake.head) < 10):
-            collision = True
-    if collision:
-        return True
-    else:
-        return False
-
-def out_of_bounds(head_position):
-    """Checks to see if snake.head is out of bounds"""
-    xcor = head_position[0]
-    ycor = head_position[1]
-    
-    if (xcor > 370 or xcor < -370 or ycor > 370 or ycor < -370):
-        return True
-    else:
-        return False
-
-def reset_game(snake: Snake, score: Scoreboard):
-    """Destroy the snake body, set it to origin, and set score to 0."""
-    time.sleep(1)
-    snake.head.goto(0,0) # Move snake head back to start
-
-    # Get rid of the snake's body
-    for index in range(0,snake.length):
-        snake.body[index].goto(1000,1000)
-    snake.body.clear()
-    snake.length = 0
-
-    score.reset_score()
-    for _ in range(2):
-        snake.add_body()
+from window import create_window
+import time
 
 def snake_main():
     """Main Game program, intializes all variables and starts game loop."""
@@ -72,12 +29,8 @@ def snake_main():
     while True:
         window.update()
 
-        # Get Location of the snake's head 
-        head_position = snake.head.position()
-        distance = snake.head.distance(food.food) # How far is the snake head from the food?
-
         # Is snake eating food?
-        if(food.eaten_food(distance)):
+        if(food.eaten_food(snake)):
             snake.add_body()
             score += 1 # Using Scoreboard dunder method for "+="
 
@@ -85,8 +38,8 @@ def snake_main():
         snake.slither()
 
         # Two lose conditions: out of bounds or autocannibalism
-        if (out_of_bounds(head_position) or ouroboros(snake)):
-            reset_game(snake, score)
+        if (snake.out_of_bounds() or snake.ouroboros()):
+            score.reset_game(snake)
         
         time.sleep(.1)
 

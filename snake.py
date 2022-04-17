@@ -63,3 +63,22 @@ class Snake:
         # Move head of snake
         self.head.forward(20)
 
+    def ouroboros(self):
+        """Checks to see if snake.head is too close to any snake.body"""
+        collision = False
+        for i in range(0, self.length):
+            if (self.body[i].distance(self.head) < 10):
+                collision = True
+        if collision:
+            return True
+        else:
+            return False
+
+    def out_of_bounds(self):
+        """Checks to see if snake.head is out of bounds"""
+        xcor = self.head.xcor()
+        ycor = self.head.ycor()
+        if (xcor < -380 or xcor > 380 or ycor < -380 or ycor > 380):
+            return True
+        else:
+            return False

@@ -5,7 +5,7 @@ Date completed: 04/16/2022
 Description: Implements the scoreboard for the snake game, with methods to update and display game over
 """
 
-import turtle
+import turtle, time
 
 
 class Scoreboard:
@@ -90,3 +90,18 @@ class Scoreboard:
         self.score = 0
         self.update()
         return True
+
+    def reset_game(self, snake):
+        """Destroy the snake body, set it to origin, and set score to 0."""
+        time.sleep(1)
+        snake.head.goto(0,0) # Move snake head back to start
+
+        # Get rid of the snake's body
+        for index in range(0,snake.length):
+            snake.body[index].goto(1000,1000)
+        snake.body.clear()
+        snake.length = 0
+
+        self.reset_score()
+        for _ in range(2):
+            snake.add_body()
