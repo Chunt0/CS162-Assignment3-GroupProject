@@ -22,17 +22,6 @@ class Snake:
         while (self.length < initial_segments):
             self.add_body()
 
-    def add_body(self):
-        """Adds a turtle object to self.body and increases self.length by 1"""
-        new_body = turtle.Turtle()
-        new_body.speed(0)
-        new_body.shape("circle")
-        color = random.choice(["red", "orange", "yellow", "green", "blue", "purple",])
-        new_body.color(color)
-        new_body.penup()
-        self.body.append(new_body)
-        self.length += 1
-
     def up(self):
         if self.head.heading() != 270:
             self.head.setheading(90)
@@ -48,6 +37,17 @@ class Snake:
     def right(self):
         if self.head.heading() != 180:
             self.head.setheading(0)
+
+    def add_body(self):
+        """Adds a turtle object to self.body and increases self.length by 1"""
+        new_body = turtle.Turtle()
+        new_body.speed(0)
+        new_body.shape("circle")
+        color = random.choice(["red", "orange", "yellow", "green", "blue", "purple",])
+        new_body.color(color)
+        new_body.penup()
+        self.body.append(new_body)
+        self.length += 1
 
     def slither(self):
         """Increments each body segments from last to first and then increments the head"""
