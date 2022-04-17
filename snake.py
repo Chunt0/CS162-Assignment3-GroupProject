@@ -14,33 +14,16 @@ class Snake:
         self.head     = turtle.Turtle()
         self.body     = []
         """List of turtle objects representing each body segment."""
-        self.length   = 0  #Only addBody should change this!
+        self.length   = 0  #Only add_body should change this!
         """Length of body segments. Does not count head."""
         self.head.shape('triangle')
         self.head.color("red")
         self.head.penup()
 
         while (self.length < initial_segments):
-            self.addBody()
+            self.add_body()
 
-
-#[~] I'm not too sure what's going on here, like what is the significance of increasing by 4?
-#[~] I think it might be cleaner if we just add one segment for each food eaten and increment the score by 1.
-#[~] See addBody() for my suggested method.
-#     def increase_length(self, amt=4):
-#         self.length += amt
-# #        print("Snake length is now:", self.length)
-#         for idx in range(amt):
-#             segment = turtle.Turtle(shape="circle", visible=False)
-#             segment.penup()
-#             # change colors (from colors list)
-#             segment.color(self.color)
-#             self.body.insert(0, segment)
-#         self.speed += 1
-#         return self.length
-
-#[~]
-    def addBody(self):
+    def add_body(self):
         new_body = turtle.Turtle()
         new_body.speed(0)
         new_body.shape("circle")
@@ -49,7 +32,6 @@ class Snake:
         new_body.penup()
         self.body.append(new_body)
         self.length += 1
-
 
     def up(self):
         if self.head.heading() != 270:
@@ -67,20 +49,6 @@ class Snake:
         if self.head.heading() != 180:
             self.head.setheading(0)
 
-#[~] It might be that I don't know how the forward() method works in the turtle module
-#[~] But in my tests I have found that using the while loop to increment the head and body 
-#[~] by a set amount of pixels is more effective when having to also compare the distances
-#[~] between the snake, itself, the border, and the food bit. Check my solution in slither()
-    # def forward(self):
-    #     self.position = self.head.position()
-    #     segment = self.body.pop(0)
-    #     segment.hideturtle()
-    #     segment.goto(self.position)
-    #     segment.showturtle()
-    #     self.body.append(segment)
-    #     self.head.forward(self.speed)
-
-#[~]
     def slither(self):
         # Move body of snake
         for index in range(self.length-1, 0, -1): # Cycle from last in list to first

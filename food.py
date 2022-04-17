@@ -17,7 +17,7 @@ class Food:
         self.food.penup()
         self.food.goto((0,200))
 
-    def eatenFood(self, distance):
+    def eaten_food(self, distance):
         """
         If the distance of the snake is less than 20 pixels from the food
         chooose random x and y coordinates and move the food to that location.
