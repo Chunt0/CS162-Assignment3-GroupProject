@@ -5,9 +5,9 @@ Date completed: 04/XX/2022
 Description: Implements the snake game.
 """
 
+from snake import Snake
 from food import Food
 from scoreboard import Scoreboard
-from snake import Snake
 from window import create_window
 import time
 
