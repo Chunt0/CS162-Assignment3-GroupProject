@@ -84,7 +84,7 @@ def snake_main():
         # Increment snake head and body    
         snake.slither()
 
-        #Two lose conditions: out of bounds or autocannibalism
+        # Two lose conditions: out of bounds or autocannibalism
         if (out_of_bounds(head_position) or ouroboros(snake)):
             reset_game(snake, score)
         
