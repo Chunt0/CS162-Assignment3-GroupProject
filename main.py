@@ -31,7 +31,6 @@ def snake_main():
 
         # Is snake eating food?
         if(food.eaten_food(snake)):
-            snake.add_body()
             score += 1 # Using Scoreboard dunder method for "+="
 
         # Increment snake head and body    

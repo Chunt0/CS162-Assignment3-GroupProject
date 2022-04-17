@@ -29,6 +29,7 @@ class Food:
             x_loc = random.randint(-370, 370)
             y_loc = random.randint(-370, 370)
             self.food.goto(x_loc, y_loc)
+            snake.add_body()
             return True
         else:
             return False
