@@ -24,6 +24,7 @@ class Snake:
             self.add_body()
 
     def add_body(self):
+        """Adds a turtle object to self.body and increases self.length by 1"""
         new_body = turtle.Turtle()
         new_body.speed(0)
         new_body.shape("circle")
@@ -50,6 +51,7 @@ class Snake:
             self.head.setheading(0)
 
     def slither(self):
+        """Increments each body segments from last to first and then increments the head"""
         # Move body of snake
         for index in range(self.length-1, 0, -1): # Cycle from last in list to first
             x = self.body[index-1].xcor()

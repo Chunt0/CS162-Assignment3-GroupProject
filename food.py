@@ -21,7 +21,7 @@ class Food:
         """
         If the distance of the snake is less than 20 pixels from the food
         chooose random x and y coordinates and move the food to that location.
-        Then run the addBody() Snake method.
+        Then run the add_body() Snake method.
         Return true, this may trigger another event in the driver.
         Else flase.
         """

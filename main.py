@@ -53,7 +53,7 @@ def reset_game(snake: Snake, score: Scoreboard):
     score.reset_score()
 
 def reset_game(snake, score):
-    """Destroy the snake body, set it to origin, and set score to 0."""
+    """Destroy the snake body, set it to origin, add two bodies, and set score to 0."""
     time.sleep(1)
     snake.head.goto(0,0) # Move snake head back to start
 
@@ -73,7 +73,6 @@ def snake_main():
     food = Food()
     snake = Snake()
     score = Scoreboard()
-
 
     # Set up keyboard inputs.
     window.listen()
