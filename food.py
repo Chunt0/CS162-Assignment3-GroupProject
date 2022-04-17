@@ -20,10 +20,8 @@ class Food:
     def eaten_food(self, snake):
         """
         If the distance of the snake is less than 20 pixels from the food
-        chooose random x and y coordinates and move the food to that location.
-        Then run the add_body() Snake method.
-        Return true, this may trigger another event in the driver.
-        Else flase.
+        choose random x and y coordinates and move the food to that location.
+        Then run the add_body() Snake method. Return true. Else flase.
         """
         if(self.food.distance(snake.head) < 20):
             x_loc = random.randint(-370, 370)
