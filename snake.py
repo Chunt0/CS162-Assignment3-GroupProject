@@ -94,18 +94,8 @@ class Snake:
 
 #[~]
     def slither(self):
-        """
-        Whe
-        """
-
-        # #1.
-        # if(self.length == 1):
-        #     x = self.head.xcor()
-        #     y = self.head.ycor()
-        #     self.body[0].goto(x, y)
-        # elif(self.length > 1):
+        
         for index in range(self.length-1, 0, -1): # Cycle from last in list to first
-            # if (index != 0):
             x = self.body[index-1].xcor()
             y = self.body[index-1].ycor()
             self.body[index].goto(x, y)
