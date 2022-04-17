@@ -1,6 +1,6 @@
 """File: main.py
 Team No.: 1. THE SNAKE CHARMERS
-Author name: Christopher Hunt
+Author name: Christopher Hunt, Phoenix Angulo, Sarah Mortensen
 Date completed: 04/XX/2022
 Description: Implements the snake game.
 """
