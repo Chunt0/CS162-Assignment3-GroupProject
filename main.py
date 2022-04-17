@@ -28,7 +28,7 @@ def snakeEatsItself(snake):
         return True
     else:
         return False
-# needs tweeking, screen size is off.
+
 def outOfBounds(head_position):
     """Checks to see if snake.head is out of bounds"""
     xcor = head_position[0]
@@ -38,8 +38,6 @@ def outOfBounds(head_position):
         return True
     else:
         return False
-
-
 
 def snakeMain():
     """Main Game program, intializes all variables and starts game loop."""
