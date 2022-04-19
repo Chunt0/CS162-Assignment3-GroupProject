@@ -20,7 +20,7 @@ def snake_main():
     score = Scoreboard()
     snake = Snake()
     food = Food()
-    power = True
+    power_on = True
 
     # Set up keyboard inputs.
     window.listen()
@@ -30,7 +30,7 @@ def snake_main():
     window.onkey(snake.right, 'd')
     window.onkey(snake.power_button, 'q') # Press 'q' to exit game cleanly
 
-    while power:
+    while power_on:
         window.update()
 
         # Is snake eating food?
@@ -50,7 +50,7 @@ def snake_main():
         if(snake.power_off()):
             score.game_over()
             time.sleep(2)
-            power = False
+            power_on = False
 
         time.sleep(.1) # Helps to make the game play at a reasonable speed
 
