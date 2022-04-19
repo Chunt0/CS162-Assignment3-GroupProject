@@ -5,7 +5,6 @@ Date completed: 04/19/2022
 Description: Implements the snake game.
 """
 
-from re import I
 from snake import Snake
 from food import Food
 from scoreboard import Scoreboard
