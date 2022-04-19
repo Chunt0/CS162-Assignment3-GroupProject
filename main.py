@@ -23,35 +23,36 @@ def snake_main():
 
     # Set up keyboard inputs.
     window.listen()
-    window.onkey(snake.up, 'w')
-    window.onkey(snake.down, 's')
-    window.onkey(snake.left, 'a')
-    window.onkey(snake.right, 'd')
-    window.onkey(snake.power_button, 'q') # Press 'q' to exit game cleanly
+    window.onkey(snake.up, "w")
+    window.onkey(snake.down, "s")
+    window.onkey(snake.left, "a")
+    window.onkey(snake.right, "d")
+    window.onkey(snake.power_button, "q")  # Press 'q' to exit game cleanly
 
     while power_on:
         window.update()
 
         # Is snake eating food?
-        if(food.eaten_food(snake)):
-            score += 1 # Using Scoreboard dunder method for "+="
+        if food.eaten_food(snake):
+            score += 1  # Using Scoreboard dunder method for "+="
 
-        # Increment snake head and body    
+        # Increment snake head and body
         snake.slither()
 
         # Two lose conditions: out of bounds or autocannibalism
-        if (snake.out_of_bounds() or snake.ouroboros()):
+        if snake.out_of_bounds() or snake.ouroboros():
             score.game_over()
             time.sleep(2)
             score.reset_game(snake)
-        
+
         # Checks to see if 'q' was pressed. If so, exit program cleanly.
-        if(snake.power_off()):
+        if snake.power_off():
             score.game_over()
             time.sleep(2)
             power_on = False
 
-        time.sleep(.1) # Helps to make the game play at a reasonable speed
+        time.sleep(0.1)  # Helps to make the game play at a reasonable speed
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     snake_main()
