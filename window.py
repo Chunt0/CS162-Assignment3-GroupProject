@@ -7,11 +7,11 @@ Description: Function that creates and returns the game window.
 
 import turtle
 
+
 def create_window():
     """Create a new window for the snake game."""
     window = turtle.Screen()
     window.title("Snake Charmer")
     window.bgcolor("light blue")
-    window.setup(width=800, height=800)    
+    window.setup(width=800, height=800)
     return window
-

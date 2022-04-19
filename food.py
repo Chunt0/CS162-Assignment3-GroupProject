@@ -8,8 +8,10 @@ Description: Implements food object. Detects collision.
 import turtle
 import random
 
+
 class Food:
     """Create a food object for the snake game."""
+
     def __init__(self):
         """Initializes food as black turtle at fixed location (0,200)"""
         self.food = turtle.Turtle()
@@ -17,7 +19,7 @@ class Food:
         self.food.shape("turtle")
         self.food.speed(0)
         self.food.penup()
-        self.food.goto((0,200))
+        self.food.goto((0, 200))
 
     def eaten_food(self, snake):
         """
@@ -25,7 +27,7 @@ class Food:
         choose random x and y coordinates and move the food to that location.
         Then run the add_body() Snake method. Return true. Else flase.
         """
-        if(self.food.distance(snake.head) < 20):
+        if self.food.distance(snake.head) < 20:
             x_loc = random.randint(-370, 370)
             y_loc = random.randint(-370, 370)
             self.food.goto(x_loc, y_loc)
