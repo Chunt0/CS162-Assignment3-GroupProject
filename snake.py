@@ -13,11 +13,13 @@ class Snake:
         self.head     = turtle.Turtle()
         self.body     = []
         """List of turtle objects representing each body segment."""
-        self.length   = 0  #Only add_body should change this!
+        self.length   = 0  # Only add_body should change this!
         """Length of body segments. Does not count head."""
         self.head.shape('triangle')
         self.head.color("red")
         self.head.penup()
+        self.power = turtle.Turtle() # This is used to track whether the user hit the power off button.
+        self.power.hideturtle()
 
         while (self.length < initial_segments):
             self.add_body()
@@ -78,7 +80,18 @@ class Snake:
         """Checks to see if snake.head is out of bounds"""
         xcor = self.head.xcor()
         ycor = self.head.ycor()
-        if (xcor < -380 or xcor > 380 or ycor < -380 or ycor > 380):
+        if (xcor < -400 or xcor > 400 or ycor < -400 or ycor > 400):
+            return True
+        else:
+            return False
+            
+    def power_button(self):
+        """Moves self.power to 1000,1000 which will trigger self.power_off()"""
+        self.power.goto(1000,1000)
+    
+    def power_off(self):
+        """If self.power was moved then return true, else false. Will be used in snake_main to exit while loop."""
+        if (self.power.xcor() > 800):
             return True
         else:
             return False

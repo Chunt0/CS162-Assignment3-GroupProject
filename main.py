@@ -5,11 +5,13 @@ Date completed: 04/XX/2022
 Description: Implements the snake game.
 """
 
+from re import I
 from snake import Snake
 from food import Food
 from scoreboard import Scoreboard
 from window import create_window
 import time
+
 
 def snake_main():
     """Main Game program, intializes all variables and starts game loop."""
@@ -18,6 +20,7 @@ def snake_main():
     score = Scoreboard()
     snake = Snake()
     food = Food()
+    power = True
 
     # Set up keyboard inputs.
     window.listen()
@@ -25,8 +28,9 @@ def snake_main():
     window.onkey(snake.down, 's')
     window.onkey(snake.left, 'a')
     window.onkey(snake.right, 'd')
+    window.onkey(snake.power_button, 'q') # Press 'q' to exit game cleanly
 
-    while True:
+    while power:
         window.update()
 
         # Is snake eating food?
@@ -38,9 +42,17 @@ def snake_main():
 
         # Two lose conditions: out of bounds or autocannibalism
         if (snake.out_of_bounds() or snake.ouroboros()):
+            score.game_over()
+            time.sleep(2)
             score.reset_game(snake)
         
-        time.sleep(.1)
+        # Checks to see if 'q' was pressed. If so, exit program cleanly.
+        if(snake.power_off()):
+            score.game_over()
+            time.sleep(2)
+            power = False
+
+        time.sleep(.1) # Helps to make the game play at a reasonable speed
 
 if __name__=="__main__":
     snake_main()

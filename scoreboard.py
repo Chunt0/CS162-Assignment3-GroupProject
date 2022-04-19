@@ -34,6 +34,7 @@ class Scoreboard:
     def update(self):
         """Redraw score. Best used internally."""
         self.cursor.clear()
+        self.cursor.goto(0,300)
         self.cursor.write(
             arg=self.score,
             align="Center",
@@ -76,7 +77,7 @@ class Scoreboard:
         self.cursor.clear()
         self.cursor.goto(0, Y_ORIGIN)
         self.cursor.write(
-            arg="Game Over!", align="Center", font=("Comic Sans", 96, "bold")
+            arg="Game Over!", align="Center", font=("Comic Sans", 88, "bold")
         )
         self.cursor.goto(x=0, y=(Y_ORIGIN - 40))
         self.cursor.write(
