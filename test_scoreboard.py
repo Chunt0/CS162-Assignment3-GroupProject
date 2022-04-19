@@ -1,7 +1,7 @@
 """File: test_scoreboard.py
 Team No.: 1. THE SNAKE CHARMERS
 Author name: Phoenix Angulo, Sarah Mortensen
-Date completed: 04/XX/2022
+Date completed: 04/19/2022
 Description: Sloppy testbed for the scoreboard object outside game context
 """
 import turtle, time, scoreboard as sb

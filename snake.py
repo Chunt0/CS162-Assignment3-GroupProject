@@ -1,7 +1,7 @@
 """File: snake.py
 Team No.: 1. THE SNAKE CHARMERS
 Author name: Sarah Mortensen, Christopher Hunt
-Date completed: 04/XX/2022
+Date completed: 04/19/2022
 Description: Implements snake object. Handles movements and segmentation.
 """
 
@@ -9,7 +9,9 @@ import turtle
 import random
 
 class Snake:
+    """Handle snake creation, movement, and expansion. Detect lose conditions. Assist in ending game with poweroff."""
     def __init__(self,initial_segments:int = 2):
+        """Create a snake moving east at origin, with given initial body segments."""
         self.head     = turtle.Turtle()
         self.body     = []
         """List of turtle objects representing each body segment."""
@@ -18,25 +20,30 @@ class Snake:
         self.head.shape('triangle')
         self.head.color("red")
         self.head.penup()
-        self.power = turtle.Turtle() # This is used to track whether the user hit the power off button.
+        self.power = turtle.Turtle()
+        """Boolean: have we hit the power off button to stop the game?"""
         self.power.hideturtle()
 
         while (self.length < initial_segments):
             self.add_body()
 
     def up(self):
+        """Sets snake head to 90* (upwards)"""
         if self.head.heading() != 270:
             self.head.setheading(90)
 
     def down(self):
+        """Sets snake heading to 270* (downwards)"""
         if self.head.heading() != 90:
             self.head.setheading(270)
         
     def left(self):
+        """Sets snake heading to 180* (leftwards)"""
         if self.head.heading() != 0:
             self.head.setheading(180)
 
     def right(self):
+        """Sets snake heading to 0* (right..wards)"""
         if self.head.heading() != 180:
             self.head.setheading(0)
 

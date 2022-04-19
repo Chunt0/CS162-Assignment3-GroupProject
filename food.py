@@ -1,7 +1,7 @@
 """File: food.py
 Team No.: 1. THE SNAKE CHARMERS
 Author name: Christopher Hunt
-Date completed: 04/XX/2022
+Date completed: 04/19/2022
 Description: Implements food object. Detects collision.
 """
 
@@ -9,7 +9,9 @@ import turtle
 import random
 
 class Food:
+    """Create a food object for the snake game."""
     def __init__(self):
+        """Initializes food as black turtle at fixed location (0,200)"""
         self.food = turtle.Turtle()
         self.food.color("black")
         self.food.shape("turtle")
