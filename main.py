@@ -44,7 +44,7 @@ def snake_main():
             score.game_over()
             time.sleep(2)
             score.reset_game(snake)
-        
+
         # Checks to see if 'q' was pressed. If so, exit program cleanly.
         if(snake.power_off()):
             score.game_over()
