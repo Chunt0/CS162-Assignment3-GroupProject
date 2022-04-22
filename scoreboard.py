@@ -34,7 +34,7 @@ class Scoreboard:
     def update(self):
         """Redraw score. Best used internally."""
         self.cursor.clear()
-        self.cursor.goto(0,300)
+        self.cursor.goto(0, 300)
         self.cursor.write(
             arg=self.score,
             align="Center",
@@ -86,7 +86,7 @@ class Scoreboard:
             font=("Comic Sans", 24, "normal"),
         )
 
-    def reset_score(self): 
+    def reset_score(self):
         """Set score to 0 and redraw board. Equivalent to set_score(0)."""
         self.score = 0
         self.update()
@@ -95,11 +95,11 @@ class Scoreboard:
     def reset_game(self, snake):
         """Destroy the snake body, set it to origin, creates two snake body segments, and set score to 0."""
         time.sleep(1)
-        snake.head.goto(0,0) # Move snake head back to start
+        snake.head.goto(0, 0)  # Move snake head back to start
 
         # Get rid of the snake's body
-        for index in range(0,snake.length):
-            snake.body[index].goto(1000,1000)
+        for index in range(0, snake.length):
+            snake.body[index].goto(1000, 1000)
         snake.body.clear()
         snake.length = 0
 
