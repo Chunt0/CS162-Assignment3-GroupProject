@@ -14,3 +14,5 @@ To run this program:
 1. Clone the git repo to your local machine. 
 
 2. To run the program use this command: python3 /path/to/cloned/repo/main.py 
+
+3. Have fun!
